@@ -4,31 +4,30 @@ import './App.css'
 import PlayerTemplate from "./PlayerTemplate";
 
 function App() {
-  const [players, setPlayers] = useState([{ name: "Alex Rosales", one: 0, two:0, three:0, four:0, five:0, six:0, seven:0, eight:0, nine:0, ten:0, score: 160}
-                                          , {name: "Alex Dany", one: 0, two:0, three:0, four:0, five:0, six:0, seven:0, eight:0, nine:0, ten:0, score: 160 }]);
+  const [players, setPlayers] = useState([{ name: "Alex Rosales", f1: [0,0], f2:[0,0], f3:[0,0], f4:[0,0], f5:[0,0], f6:[0,0], f7:[0,0], f8:[0,0], f9:[0,0], f10:[0,0,0], score: 160}
+                                        ,{  name: "Alex Dany", f1: [0,0], f2:[0,0], f3:[0,0], f4:[0,0], f5:[0,0], f6:[0,0], f7:[0,0], f8:[0,0], f9:[0,0], f10:[0,0,0], score: 160 }]);
   return (
-    <div className="scoreboard">
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>  
-          <th>5</th>
-          <th>6</th>
-          <th>7</th>
-          <th>8</th>
-          <th>9</th>
-          <th>10</th>
-          <th>Score</th>
-        </tr>
-        <tbody>
-          {players.map((player,key) => {
+    <div>
+      <div className="scoreboard flex-col col-auto border-2 border-cyan-400">
+        <div className="flex-row row-auto space-x-10 p-6">
+            <span>Name</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>Score</span>
+            <span>Max Score</span>
+        </div>
+        {players.map((player,key) => {
             return <PlayerTemplate player={player} key={key}/>
           })}
-        </tbody>
-      </table>
+      </div>
     </div>
   );
 }
